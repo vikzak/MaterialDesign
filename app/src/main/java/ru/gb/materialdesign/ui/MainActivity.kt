@@ -1,8 +1,10 @@
-package ru.gb.materialdesign
+package ru.gb.materialdesign.ui
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import ru.gb.materialdesign.R
 import ru.gb.materialdesign.ui.main.MainFragment
+
 
 class MainActivity : AppCompatActivity() {
 
