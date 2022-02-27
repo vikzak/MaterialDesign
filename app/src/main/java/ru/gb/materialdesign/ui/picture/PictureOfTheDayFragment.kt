@@ -2,6 +2,7 @@ package ru.gb.materialdesign.ui.picture
 
 import android.os.Bundle
 import android.view.*
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
@@ -10,7 +11,6 @@ import kotlinx.android.synthetic.main.main_activity.*
 import ru.gb.materialdesign.R
 
 class PictureOfTheDayFragment : Fragment() {
-
     //private lateinit var bottomSheetBehavior: BottomSheetBehavior<ConstraintLayout>
     private val viewModel: PictureOfTheDayViewModel by lazy {
         ViewModelProviders.of(this).get(PictureOfTheDayViewModel::class.java)
@@ -73,7 +73,7 @@ class PictureOfTheDayFragment : Fragment() {
                 val url = serverResponseData.url
                 if (url.isNullOrEmpty()) {
                     //showError("Сообщение, что ссылка пустая")
-                    /////toast("Link is empty")
+                    toast("Link is empty")
                 } else {
                     //showSuccess()
                     image_view.load(url) {
@@ -88,7 +88,7 @@ class PictureOfTheDayFragment : Fragment() {
             }
             is PictureOfTheDayData.Error -> {
                 //showError(data.error.message)
-                ////toast(data.error.message)
+                toast(data.error.message)
             }
         }
     }
@@ -120,15 +120,15 @@ class PictureOfTheDayFragment : Fragment() {
 //        bottomSheetBehavior.state = BottomSheetBehavior.STATE_COLLAPSED
 //    }
 
-//    private fun Fragment.toast(string: String?) {
-//        Toast.makeText(context, string, Toast.LENGTH_SHORT).apply {
-//            setGravity(Gravity.BOTTOM, 0, 250)
-//            show()
-//        }
-//    }
+    private fun Fragment.toast(string: String?) {
+        Toast.makeText(context, string, Toast.LENGTH_SHORT).apply {
+            setGravity(Gravity.BOTTOM, 0, 250)
+            show()
+        }
+    }
 
-//    companion object {
-//        fun newInstance() = PictureOfTheDayFragment()
-//        private var isMain = true
-//    }
+    companion object {
+        fun newInstance() = PictureOfTheDayFragment()
+        private var isMain = true
+    }
 }

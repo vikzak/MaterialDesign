@@ -3,7 +3,7 @@ package ru.gb.materialdesign.ui
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import ru.gb.materialdesign.R
-import ru.gb.materialdesign.ui.main.MainFragment
+import ru.gb.materialdesign.ui.picture.PictureOfTheDayFragment
 
 
 class MainActivity : AppCompatActivity() {
@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.main_activity)
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
-                .replace(R.id.container, MainFragment.newInstance())
+                .replace(R.id.container, PictureOfTheDayFragment.newInstance())
                 .commitNow()
         }
     }
