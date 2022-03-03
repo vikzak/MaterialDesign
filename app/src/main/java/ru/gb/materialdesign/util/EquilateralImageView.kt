@@ -7,10 +7,11 @@ import java.util.jar.Attributes
 
 class EquilateralImageView @JvmOverloads constructor(
     context: Context,
-    attributes: AttributeSet? = null,
+    attrs: AttributeSet? = null,
     defStyleAttr: Int = 0
-) : AppCompatImageView(context,attributes,defStyleAttr){
+) : AppCompatImageView(context, attrs, defStyleAttr) {
+
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
-        super.onMeasure(widthMeasureSpec, heightMeasureSpec)
+        super.onMeasure(widthMeasureSpec, widthMeasureSpec)
     }
 }
